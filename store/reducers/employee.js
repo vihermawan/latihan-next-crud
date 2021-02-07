@@ -46,7 +46,15 @@ const mainReducer = (state= initialState, action) => {
             );
             return{
                 ...state,
-                selectedEmployee
+                newEmployeeList
+            };
+        case t.EMPLOYEE_SELECTED:
+            const selectedEmployee = state.employeeList.find(
+                (employee) => employee._id === action.payload
+            );
+            return {
+                ...state,
+                selectedEmployee,
             };
         default:
             return state;

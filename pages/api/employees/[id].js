@@ -11,7 +11,7 @@ export default async(req,res) => {
         case "GET":
             try {
                 const employee = await Employee.findById(id);
-
+                console.log('employee',employee)
                 return res.status(200).json({
                     success : true,
                     data : employee

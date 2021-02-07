@@ -4,7 +4,7 @@ import * as t from "../types";
 function* fetchEmployees(){
     try {
         const response = yield fetch("/api/employees");
-
+		console.log('test',response)
         const employeeList = yield response.json();
 
         yield put({
@@ -34,7 +34,7 @@ function* addEmployee(action){
         });
 
         const newEmployee = yield response.json();
-
+		console.log('newEmployee',newEmployee,response)
         yield put({
             type : t.EMPLOYEE_ADD_SUCCEEDED,
             payload : newEmployee.data,

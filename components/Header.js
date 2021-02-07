@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
 import {PersonAddSVG} from "../icons/index";
+import { setModalOpen } from "../store";
 
 export function Header(){
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     return(
         <header className="header"> 
@@ -11,7 +12,9 @@ export function Header(){
             </h1>
             <button
                 className="btn btn__primary btn__icon"
-                // onClick={}
+                onClick={() => {
+                    dispatch(setModalOpen(true));
+                }}
             >
                 <PersonAddSVG /> <span>Add New</span>
             </button>

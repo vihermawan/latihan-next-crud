@@ -22,7 +22,7 @@ export default async (req,res) => {
             }
         case "POST" :
             try {
-                const employees = await Employee.create(req.body);
+                const employee = await Employee.create(req.body);
                 return res.status(201).json({
                     success : true,
                     data : employee
